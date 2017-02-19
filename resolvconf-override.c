@@ -87,5 +87,9 @@ int __res_init(void)
 
 	override_ns ();
 
+	if (getenv("FORCE_DNS_OVER_TCP") != NULL) {
+		_res.options |= RES_USEVC;
+	}
+
 	return ret;
 }
