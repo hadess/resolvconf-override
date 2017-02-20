@@ -1,6 +1,6 @@
-resolvconf override provides a shared library
-to be used as an LD_PRELOAD to override the
-nameservers listed in /etc/resolv.conf on glibc-based
+resolvconf_override provides a shared library
+to be used as an `LD_PRELOAD` to override the
+nameservers listed in `/etc/resolv.conf` on glibc-based
 systems (eg. most Linux distributions).
 
 Usage
@@ -8,15 +8,17 @@ Usage
 
 To use the Google DNS in place of the ones mentioned in
 /etc/resolv.conf you would run:
+```
 LD_PRELOAD=/usr/lib64/libresolvconf-override.so NAMESERVER1=8.8.8.8 NAMESERVER2=8.8.4.4 myapplication
+```
 
 Invalid nameserver names passed as arguments are ignored.
 
 Technical details
 -----------------
 
-The shared library overrides the gethostbyname(), getaddrinfo()
-and res_init() system calls. It does not support IPv6, and might
+The shared library overrides the `gethostbyname()`, `getaddrinfo()`
+and `res_init()` system calls. It does not support IPv6, and might
 be lacking particular system calls overrides for all applications
 to work as expected.
 
@@ -32,4 +34,4 @@ http://www.gnu.org/software/libc/manual/html_mono/libc.html#Copying
 Copyright
 ---------
 
-Copyright Bastien Nocera <hadess@hadess.net> 2013
+Copyright Bastien Nocera <<hadess@hadess.net>> 2013,2017
