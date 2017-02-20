@@ -59,6 +59,13 @@ override_ns (void)
 		_res.nscount = valid_ns;
 }
 
+static void
+override_options (void)
+{
+	if (getenv ("FORCE_DNS_OVER_TCP") != NULL)
+		_res.options |= RES_USEVC;
+}
+
 struct hostent *gethostbyname(const char *name)
 {
 	if (res_init () < 0)
@@ -86,6 +93,7 @@ int __res_init(void)
 	int ret = f();
 
 	override_ns ();
+	override_options ();
 
 	return ret;
 }

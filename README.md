@@ -14,6 +14,9 @@ LD_PRELOAD=/usr/lib64/libresolvconf-override.so NAMESERVER1=8.8.8.8 NAMESERVER2=
 
 Invalid nameserver names passed as arguments are ignored.
 
+If you want to force the use of TCP for DNS requests, set the
+`FORCE_DNS_OVER_TCP` environment variable.
+
 Technical details
 -----------------
 
