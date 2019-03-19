@@ -3,6 +3,16 @@ to be used as an `LD_PRELOAD` to override the
 nameservers listed in `/etc/resolv.conf` on glibc-based
 systems (eg. most Linux distributions).
 
+Building
+--------
+
+```sh
+$ mkdir build
+$ cd build
+$ meson ..
+$ ninja
+```
+
 Usage
 -----
 
