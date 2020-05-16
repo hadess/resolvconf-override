@@ -10,7 +10,7 @@ cc = meson.get_compiler('c')
 libdl = cc.find_library('dl')
 
 shared_library(
-    'gettext-pseudolocale',
+    'resolvconf-override',
     sources: [ 'resolvconf-override.c' ],
     dependencies: libdl,
     install: false
